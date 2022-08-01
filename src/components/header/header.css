@@ -38,7 +38,8 @@ header {
 
 /* ==================== ME ==================== */
 .me {
-    background: linear-gradient(RGB(250,234,205), transparent);
+    /* RGB(250,234,205) */
+    background: linear-gradient(rgb(83, 83, 83), transparent);
     width: 22rem;
     height: 30rem;
     position: absolute;

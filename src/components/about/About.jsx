@@ -8,7 +8,7 @@ import { DiReact } from 'react-icons/di'
 const About = () => {
   return (
     <section id='about'>
-      <h5> This is me...</h5>
+      <h5> Who am I?</h5>
       <h2>About Me</h2>
 
       <div className='container about__container'>
