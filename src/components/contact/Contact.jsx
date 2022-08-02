@@ -1,8 +1,22 @@
 import React from 'react'
+import { useRef } from 'react';
 import './contact.css'
 import {AiTwotoneMail} from 'react-icons/ai'
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLICK_KEY)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    e.target.reset()
+  };
   return (
     <section id="contact">
       <h5>Get in Touch</h5>
@@ -17,7 +31,7 @@ const Contact = () => {
             <a href="mailto:campollo.ram@gmail.com">Send a message</a>
           </article>
         </div>
-        <form action="">
+        <form onSubmit={sendEmail} ref={form}>
           <input type="text" name="name" placeholder='Your Full Name' required/>
           <input type="email" name="email" placeholder='Your Email' required/>
           <textarea name="message" rows="7" placeholder='Your Message' required/>

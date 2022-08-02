@@ -37,7 +37,7 @@ body {
   /* background: black; */
   color: var(--color-white);
   line-height: 1.7;
-  background-color: rgba(251, 5, 112, 0.3);
+  background-color: rgba(8, 0, 85, 0.7);
   background-image: url('./assets/webb-dark.png');
 }
 
