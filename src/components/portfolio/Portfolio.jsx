@@ -1,6 +1,7 @@
 import React from 'react'
 import './portfolio.css'
 import DALI from '../../assets/dali_persistencia.jpg'
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   return (
@@ -15,7 +16,7 @@ const Portfolio = () => {
           </div>
             <h2>Search for Art</h2>
             <div className='portfolio__item-cta'>
-              <a href="https://campollo.io/search-for-art/" className='new-btn btn' target="_blank">Check it out!</a>
+              <Link to="/search-for-art" className='new-btn btn' target="_blank">Check it out!</Link>
             </div>
         </article>
       </div>

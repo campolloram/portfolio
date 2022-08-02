@@ -1,12 +1,7 @@
 import React from 'react'
-import Header from './components/header/Header'
-import Nav from './components/nav/Nav'
-import About from './components/about/About'
-import Experience from './components/experience/Experience'
-import Services from './components/services/Services'
-import Portfolio from './components/portfolio/Portfolio'
-import Contact from './components/contact/Contact'
-import Footer from './components/footer/Footer'
+import {  Route , BrowserRouter, Routes } from 'react-router-dom'
+import Home from './pages/Home';
+import PageNotFound from './pages/404Page';
 import Helmet from "react-helmet";
 
 const App = () => {
@@ -34,13 +29,12 @@ const App = () => {
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
     </Helmet>
-      <Header/>
-      <Nav/>
-      <About/>
-      <Experience/>
-      <Portfolio/>
-      <Contact/>
-      <Footer/>
+      <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<Home/>} />
+        <Route path="*" exact={true} element={<PageNotFound/>} />
+    </Routes>
+    </BrowserRouter>
     </>
   )
 }
