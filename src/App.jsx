@@ -1,40 +1,50 @@
 import React from 'react'
-import {  Route , BrowserRouter, Routes } from 'react-router-dom'
-import Home from './pages/Home';
-import PageNotFound from './pages/404Page';
-import Helmet from "react-helmet";
+import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Music from './pages/Music'
+import MusicSheet from './pages/MusicSheet'
+import PageNotFound from './pages/404Page'
+import Helmet from 'react-helmet'
 
 const App = () => {
   return (
-    <> <Helmet>
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/site.webmanifest" />
-      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-      <meta name="msapplication-TileColor" content="#da532c" />
-      <meta name="theme-color" content="#ffffff" />
-    </Helmet>
+    <>
+      {' '}
+      <Helmet>
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
+        <meta name='msapplication-TileColor' content='#da532c' />
+        <meta name='theme-color' content='#ffffff' />
+      </Helmet>
       <BrowserRouter>
-      <Routes>
-        <Route exact path='/' element={<Home/>} />
-        <Route path="*" exact={true} element={<PageNotFound/>} />
-    </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route
+            path={'/musicsheet/:songname'}
+            exact
+            component={<MusicSheet />}
+          />
+          <Route exact path='/music' element={<Music />} />
+          <Route path='*' exact={true} element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
